@@ -250,6 +250,8 @@ semverParse() {
 }
 
 do_install() {
+        sudo apt-get install -y nfs-common
+
 	echo "# Executing docker install script, commit: $SCRIPT_COMMIT_SHA"
 
 	if command_exists docker; then
@@ -585,5 +587,3 @@ do_install() {
 # wrapped up in a function so that we have some protection against only getting
 # half the file during "curl | sh"
 do_install
-
-sudo apt-get install -y nfs-common
